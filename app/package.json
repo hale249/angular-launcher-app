@@ -1,10 +1,8 @@
 {
-  "name": "angular-electron",
-  "description": "Angular Electron sample",
-  "author": {
-    "name": "Maxime GRIS",
-    "email": "maxime.gris@gmail.com"
-  },
+  "name": "Miraway-CETM-Launcher",
+  "description": "Miraway CETM Launcher for CETM Product Line",
+  "homepage": "https://miraway.vn",
+  "author": "MirawaySystem",
   "version": "12.0.0",
   "main": "main.js",
   "private": true,

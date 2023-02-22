@@ -1,14 +1,15 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
-    "defaultCollection": "@angular-eslint/schematics"
+    "defaultCollection": "@angular-eslint/schematics",
+    "analytics": "55bb6395-0bef-47f9-9390-4fa4e672273d"
   },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "angular-electron": {
       "root": "",
-      "sourceRoot": "src",
+      "sourceRoot": "admin",
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -23,18 +24,18 @@
         "build": {
           "builder": "@angular-builders/custom-webpack:browser",
           "options": {
-            "outputPath": "dist",
-            "index": "src/index.html",
-            "main": "src/main.ts",
-            "tsConfig": "src/tsconfig.app.json",
-            "polyfills": "src/polyfills.ts",
+            "outputPath": "./renderer/admin",
+            "index": "admin/index.html",
+            "main": "admin/main.ts",
+            "tsConfig": "admin/tsconfig.app.json",
+            "polyfills": "admin/polyfills.ts",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "admin/favicon.ico",
+              "admin/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "admin/styles.scss"
             ],
             "scripts": [],
             "customWebpackConfig": {
@@ -54,8 +55,8 @@
               "buildOptimizer": false,
               "fileReplacements": [
                 {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.dev.ts"
+                  "replace": "admin/environments/environment.ts",
+                  "with": "admin/environments/environment.dev.ts"
                 }
               ]
             },
@@ -70,8 +71,8 @@
               "buildOptimizer": true,
               "fileReplacements": [
                 {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "replace": "admin/environments/environment.ts",
+                  "with": "admin/environments/environment.prod.ts"
                 }
               ]
             },
@@ -86,8 +87,8 @@
               "buildOptimizer": false,
               "fileReplacements": [
                 {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.web.ts"
+                  "replace": "admin/environments/environment.ts",
+                  "with": "admin/environments/environment.web.ts"
                 }
               ]
             },
@@ -102,8 +103,8 @@
               "buildOptimizer": true,
               "fileReplacements": [
                 {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.web.prod.ts"
+                  "replace": "admin/environments/environment.ts",
+                  "with": "admin/environments/environment.web.prod.ts"
                 }
               ]
             }
@@ -138,18 +139,18 @@
         "test": {
           "builder": "@angular-builders/custom-webpack:karma",
           "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills-test.ts",
-            "tsConfig": "src/tsconfig.spec.json",
-            "karmaConfig": "src/karma.conf.js",
+            "main": "admin/test.ts",
+            "polyfills": "admin/polyfills-test.ts",
+            "tsConfig": "admin/tsconfig.spec.json",
+            "karmaConfig": "admin/karma.conf.js",
             "inlineStyleLanguage": "scss",
             "scripts": [],
             "styles": [
-              "src/styles.scss"
+              "admin/styles.scss"
             ],
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "admin/favicon.ico",
+              "admin/assets"
             ],
             "customWebpackConfig": {
               "path": "./angular.webpack.js",
@@ -161,8 +162,8 @@
           "builder": "@angular-eslint/builder:lint",
           "options": {
             "lintFilePatterns": [
-              "src/**/*.ts",
-              "src/**/*.html"
+              "admin/**/*.ts",
+              "admin/**/*.html"
             ]
           }
         }

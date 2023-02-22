@@ -1,21 +1,26 @@
 {
-  "asar": true,
+  "asar": false,
+  "appId": "com.launcher.miraway.cetm",
   "directories": {
     "output": "release/"
   },
+  "extraFiles": [
+    "assets/**"
+  ],
   "files": [
     "**/*",
+    "renderer",
     "!**/*.ts",
     "!*.map",
     "!package.json",
     "!package-lock.json",
     {
-      "from": "../dist",
+      "from": "../renderer",
       "filter": ["**/*"]
     }
   ],
   "win": {
-    "icon": "dist/assets/icons",
+    "icon": "renderer/admin/assets/icons",
     "target": [
       "portable"
     ]
@@ -24,13 +29,13 @@
     "splashImage": "dist/assets/icons/electron.bmp"
   },
   "mac": {
-    "icon": "dist/assets/icons",
+    "icon": "renderer/admin/assets/icons",
     "target": [
       "dmg"
     ]
   },
   "linux": {
-    "icon": "dist/assets/icons",
+    "icon": "renderer/admin/assets/icons",
     "target": [
       "AppImage"
     ]

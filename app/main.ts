@@ -1,11 +1,14 @@
 import {app, BrowserWindow, screen} from 'electron';
 import * as path from 'path';
 import * as fs from 'fs';
+import {COMMON_DIR} from "./shared";
 
 let win: BrowserWindow = null;
 const args = process.argv.slice(1),
   serve = args.some(val => val === '--serve');
 
+const appRoot = process.cwd();
+console.log('adadadadafdadf', COMMON_DIR.VIEW)
 function createWindow(): BrowserWindow {
 
   const size = screen.getPrimaryDisplay().workAreaSize;
@@ -14,8 +17,8 @@ function createWindow(): BrowserWindow {
   win = new BrowserWindow({
     x: 0,
     y: 0,
-    width: size.width,
-    height: size.height,
+    width: 600,
+    height: 600,
     webPreferences: {
       nodeIntegration: true,
       allowRunningInsecureContent: (serve),
@@ -33,9 +36,9 @@ function createWindow(): BrowserWindow {
     // Path when running electron executable
     let pathIndex = './index.html';
 
-    if (fs.existsSync(path.join(__dirname, '../dist/index.html'))) {
+    if (fs.existsSync(path.join(__dirname, '../admin/index.html'))) {
        // Path when running electron in local folder
-      pathIndex = '../dist/index.html';
+      pathIndex = '../admin/index.html';
     }
 
     const url = new URL(path.join('file:', __dirname, pathIndex));
